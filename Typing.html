@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Chơi trò chơi</h2>
+<form>
+    <textarea id="text" cols="50" rows="10" onkeydown="onkeyDown()">
+    </textarea>
+</form>
+<script>
+    let arr = ['T','ô','i',' ','y','ê','u',' ','e','m',',',' ','t','h','ề',' ','c','o','n',' ','c','h','ó',' ','n','à','o',' ','n','ó','i',' ','p','h','é','t','!','!','!'];
+    let n = "";
+    function onkeyDown() {
+        let t = document.getElementById("text").value;
+        for (let i = 0; i < t.length ; i++) {
+            n += arr[i];
+            if (i === arr.length - 1) {
+                document.getElementById("text").value = "";
+                n = "";
+            }
+        }
+        document.getElementById("text").value = n;
+        n = "";
+        setTimeout("onkeyDown()", 1);
+    }
+</script>
+</body>
+</html>
